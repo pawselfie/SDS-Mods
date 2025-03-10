@@ -15,5 +15,5 @@ local toolData = game:GetService("ReplicatedStorage").Shared.Data.ToolData
 local success, originalScript = pcall(require, toolData)
 
 if success and originalScript and originalScript["Crystal Blaster"] then
-     originalScript["Crystal Blaster"].brickCost = "e"
+     originalScript["Crystal Blaster"].brickCost = "@"
 end
