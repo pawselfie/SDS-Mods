@@ -28,7 +28,7 @@ MakeWeapon("Golden Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"}) 
 MakeWeapon("Crystal Blaster", {minDamage = 45, damage = 70, detTime = 0}, {brickCost = "&"})
 MakeWeapon("Hoss Hog", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"})
 MakeWeapon("Spooky Staff", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"}) --hoss hog skin
-MakeWeapon("Embezzler", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"}) --hoss hog skin
+MakeWeapon("The Embezzler", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"}) --hoss hog skin
 MakeWeapon("Scope Shot", {minDamage = 45, damage = 70}, {brickCost = "&"})
 MakeWeapon("Scope Shot (Dark)", {minDamage = 45, damage = 70}, {brickCost = "&"}) --scope shot skin
 MakeWeapon("Kitty Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"}) --scope shot skin
