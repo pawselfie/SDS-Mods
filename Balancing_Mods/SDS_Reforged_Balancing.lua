@@ -41,7 +41,7 @@ MakeWeapon("Umbrellade", {ragdollResist = true, toolName = "Bridge Trowel"}, {ra
 MakeWeapon("Tennis Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40)}, {ragdollResist = true, brickCost = "&", projectileSpeed = 100})
 MakeWeapon("Ice Sword", {damage = 30, chill = 2.5, speed = 88, ragdollResist = true, toolName = "Bridge Trowel",}, {ragdollResist = true, brickCost = "&", projectileSpeed = 88, reloadModifier = 0.6})
 MakeWeapon("Bamboo Buster", {ragdollResist = true, toolName = "Bridge Trowel", speed = 75, minDamage = 25, damage = 35, detTime = 0.8, bombJumpMultiplier = 0.75, noDestroy = false}, {ragdollResist = true, brickCost = "&", projectileSpeed = 75, reloadModifier = 1, swingSpeed = 1.5, StrongSwing = false, noStrike = true})
-MakeWeapon("Brickbreaker", {ragdollResist = true, toolName = "Bridge Trowel", ragdoll = 5}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.5, swingSpeed = 0.8})
+MakeWeapon("Brickbreaker", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.5, swingSpeed = 0.6})
 MakeWeapon("Darkheart", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 1.5, swingSpeed = 1.25})
 MakeWeapon("Fire Sword", {ragdollResist = true, toolName = "Bridge Trowel", speed = 88, fireChance = 100}, {ragdollResist = true, brickCost = "&", projectileSpeed = 88, reloadModifier = 0.83, swingSpeed = 1})
 MakeWeapon("Frying Pan", {ragdollResist = true, toolName = "Bridge Trowel", ragdoll = 1.4}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.5, swingSpeed = 1})
