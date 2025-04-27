@@ -36,8 +36,8 @@ MakeWeapon("Firework Launcher", {minDamage = 45, damage = 90, baseProjectile = "
 MakeWeapon("Shadow Dragon", {minDamage = 0, damage = 0, speed = 0, bombJumpMultiplier = 0, pressure = 0, noDestroy = True}, {brickCost = "x", specialAttack = "use firework launcher instead"}) --set to not work so people use firework
 MakeWeapon("Lunar Dragon", {minDamage = 0, damage = 0, speed = 0, bombJumpMultiplier = 0, pressure = 0, noDestroy = True}, {brickCost = "x", specialAttack = "use firework launcher instead"}) --set to not work so people use firework 2
 MakeWeapon("Rock Star", {speed = 100, gravity = 0.5, minDamage = 45, damage = 45, detTime = 0.75, ragdoll = 0}, {speed = 100, projectileGravity = 0.5, brickCost = "&"})
-MakeWeapon("Frost Staff", {minDamage = 30, damage = 45, gravity = 0.4, speed = 150, detTime = 2}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
-MakeWeapon("Ice Cream Launcher", {minDamage = 30, damage = 45, gravity = 0.4, speed = 150, detTime = 2}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
+MakeWeapon("Frost Staff", {minDamage = 25, damage = 35, gravity = 0.4, speed = 150}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
+MakeWeapon("Ice Cream Launcher", {minDamage = 25, damage = 35, gravity = 0.4, speed = 150}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
 
 MakeWeapon("Boomerang", nil, {reload = 3, chargeTime = 0.8, brickCost = "&"})
 MakeWeapon("Bananarang", nil, {reload = 3, chargeTime = 0.8, brickCost = "&"}) --boomerang skin
@@ -85,8 +85,8 @@ MakeWeapon("Gammablade", {ragdollResist = true, toolName = "Bridge Trowel"}, {ra
 MakeWeapon("Glowblade", {toolName = "Bridge Trowel"}, {reloadModifier = 999, swingSpeed = 999, lungeTime = 999, specialAttack = "use another sword insead", brickCost = "x"}) --disabled to disencourage unnecessary lag
 MakeWeapon("Umbrellade", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.8, swingSpeed = 0.8})
 MakeWeapon("Petal Parasol", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.8, swingSpeed = 0.8}) --umbrellade skin
-MakeWeapon("Tennis Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40)}, {ragdollResist = true, brickCost = "&", projectileSpeed = 100})
-MakeWeapon("Golden Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40)}, {ragdollResist = true, brickCost = "&", projectileSpeed = 100}) --tenis racket skin
+MakeWeapon("Tennis Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40)}, {reloadModifier = 0.5, ragdollResist = true, brickCost = "&", projectileSpeed = 100})
+MakeWeapon("Golden Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40)}, {reloadModifier = 0.5, ragdollResist = true, brickCost = "&", projectileSpeed = 100}) --tenis racket skin
 MakeWeapon("Ice Sword", {damage = 30, chill = 2.5, speed = 88, ragdollResist = true, toolName = "Bridge Trowel",}, {ragdollResist = true, brickCost = "&", projectileSpeed = 88, reloadModifier = 0.6})
 MakeWeapon("Bamboo Buster", {ragdollResist = true, toolName = "Bridge Trowel", speed = 75, minDamage = 25, damage = 35, detTime = 0.8, bombJumpMultiplier = 0.75, noDestroy = false}, {ragdollResist = true, brickCost = "&", projectileSpeed = 75, reloadModifier = 1, swingSpeed = 1.5, StrongSwing = false, noStrike = true})
 MakeWeapon("Brickbreaker", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.5, swingSpeed = 0.6})
