@@ -22,15 +22,17 @@ MakeWeapon("Gift Bomb", nil, {reloadModifier = 1, brickCost = "&"}) --square bom
 MakeWeapon("Gem Bomb", nil, {reloadModifier = 1, brickCost = "&"}) --square bomb skin
 
 MakeWeapon("Arm Cannon", nil, {chargeTime = 2, brickCost = "&"})
+MakeWeapon("Bombardier", {minDamage = 35}, {brickCost = "&"})
+MakeWeapon("Starblaster", {minDamage = 35}, {brickCost = "&"})
 MakeWeapon("Rocket Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"})
 MakeWeapon("Classic Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"}) --rocket launcher skin
-MakeWeapon("Golden Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"}) --rocket launcher skin
+MakeWeapon("Golden Launcher", {bombJumpMultiplier = 0.5, speed = 90, minDamage = 70, damage = 75, gravity = 1.8, radius = 5, pressure = 0, ragdoll = 0}, {projectileSpeed = 90, projectileGravity = 1.8, brickCost = "&"}) 
 MakeWeapon("Crystal Blaster", {minDamage = 45, damage = 70, detTime = 0}, {brickCost = "&"})
 MakeWeapon("Hoss Hog", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"})
 MakeWeapon("Spooky Staff", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"}) --hoss hog skin
 MakeWeapon("The Embezzler", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"}) --hoss hog skin
 MakeWeapon("Scope Shot", {minDamage = 45, damage = 70}, {brickCost = "&"})
-MakeWeapon("Scope Shot (Dark)", {minDamage = 45, damage = 70}, {brickCost = "&"}) --scope shot skin
+MakeWeapon("Scope Shot (Dark)", {speed = 266, minDamage = 90, damage = 95, baseProjectile = "Rocket", radius = 1.4, pressure = 0, bombJumpMultiplier = 0, ragdoll = 0, noDestroy = True}, {projectile = "Rocket", projectileSpeed = 266, brickCost = "&"})
 MakeWeapon("Kitty Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"}) --scope shot skin
 MakeWeapon("Firework Launcher", {minDamage = 45, damage = 90, baseProjectile = "ShadowRocket", ragdoll = 0}, {projectile = "ShadowRocket", brickCost = "&"}) --is shadow dragon now
 MakeWeapon("Shadow Dragon", {minDamage = 0, damage = 0, speed = 0, bombJumpMultiplier = 0, pressure = 0, noDestroy = True}, {brickCost = "x", specialAttack = "use firework launcher instead"}) --set to not work so people use firework
