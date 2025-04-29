@@ -1,5 +1,10 @@
 ﻿local Weapons = {}
 
+local Import = require(game.ReplicatedStorage.Shared.Import)
+local var1_result1_upvr_2 = Import("Shared/Utils/Messages")
+
+var1_result1_upvr_2:send("Notify", "Reforged balance patch applied!", "ERROR", "FRIEND")
+
 local function MakeWeapon(weaponName:string, remoteVariables, localVariables)
 local weaponTemplate = {
 remoteOverwrite = remoteVariables,
@@ -28,18 +33,18 @@ MakeWeapon("Rocket Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"})
 MakeWeapon("Classic Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"}) --rocket launcher skin
 MakeWeapon("Golden Launcher", {bombJumpMultiplier = 0.5, speed = 90, minDamage = 70, damage = 75, gravity = 1.8, radius = 5, pressure = 0, ragdoll = 0}, {projectileSpeed = 90, projectileGravity = 1.8, brickCost = "&"}) 
 MakeWeapon("Crystal Blaster", {minDamage = 45, damage = 70, detTime = 0}, {brickCost = "&"})
-MakeWeapon("Hoss Hog", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"})
-MakeWeapon("Spooky Staff", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"}) --hoss hog skin
-MakeWeapon("The Embezzler", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8}, {speed = 62, brickCost = "&"}) --hoss hog skin
-MakeWeapon("Scope Shot", {minDamage = 45, damage = 70}, {brickCost = "&"})
-MakeWeapon("Scope Shot (Dark)", {speed = 266, minDamage = 90, damage = 95, baseProjectile = "Rocket", radius = 1.4, pressure = 0, bombJumpMultiplier = 0, ragdoll = 0, noDestroy = True}, {projectile = "Rocket", projectileSpeed = 266, brickCost = "&"})
+MakeWeapon("Hoss Hog", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8, ragdoll = 0}, {speed = 62, brickCost = "&"})
+MakeWeapon("Spooky Staff", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8, ragdoll = 0}, {speed = 62, brickCost = "&"}) --hoss hog skin
+MakeWeapon("The Embezzler", {minDamage = 30, damage = 60, speed = 62, baseProjectile = "Rocket", bombJumpMultiplier = 0.8, ragdoll = 0}, {speed = 62, brickCost = "&"}) --hoss hog skin
+MakeWeapon("Scope Shot", {minDamage = 45, damage = 70, ragdoll = 0}, {brickCost = "&"})
+MakeWeapon("Scope Shot (Dark)", {speed = 266, minDamage = 720, damage = 960, baseProjectile = "Rocket", radius = 8, pressure = 0, bombJumpMultiplier = 0, ragdoll = 0, noDestroy = True}, {projectile = "Rocket", projectileSpeed = 266, brickCost = "&"})
 MakeWeapon("Kitty Launcher", {minDamage = 45, damage = 70}, {brickCost = "&"}) --scope shot skin
 MakeWeapon("Firework Launcher", {minDamage = 45, damage = 90, baseProjectile = "ShadowRocket", ragdoll = 0}, {projectile = "ShadowRocket", brickCost = "&"}) --is shadow dragon now
 MakeWeapon("Shadow Dragon", {minDamage = 0, damage = 0, speed = 0, bombJumpMultiplier = 0, pressure = 0, noDestroy = True}, {brickCost = "x", specialAttack = "use firework launcher instead"}) --set to not work so people use firework
 MakeWeapon("Lunar Dragon", {minDamage = 0, damage = 0, speed = 0, bombJumpMultiplier = 0, pressure = 0, noDestroy = True}, {brickCost = "x", specialAttack = "use firework launcher instead"}) --set to not work so people use firework 2
 MakeWeapon("Rock Star", {speed = 100, gravity = 0.5, minDamage = 45, damage = 45, detTime = 0.75, ragdoll = 0}, {speed = 100, projectileGravity = 0.5, brickCost = "&"})
-MakeWeapon("Frost Staff", {minDamage = 25, damage = 35, gravity = 0.4, speed = 150}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
-MakeWeapon("Ice Cream Launcher", {minDamage = 25, damage = 35, gravity = 0.4, speed = 150}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
+MakeWeapon("Frost Staff", {minDamage = 25, damage = 35, gravity = 0.4, speed = 150, ragdoll = 0}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
+MakeWeapon("Ice Cream Launcher", {minDamage = 25, damage = 35, gravity = 0.4, speed = 150, ragdoll = 0}, {projectileGravity = 0.4, speed = 150, brickCost = "&"})
 
 MakeWeapon("Boomerang", nil, {reload = 3, chargeTime = 0.8, brickCost = "&"})
 MakeWeapon("Bananarang", nil, {reload = 3, chargeTime = 0.8, brickCost = "&"}) --boomerang skin
@@ -87,8 +92,8 @@ MakeWeapon("Gammablade", {ragdollResist = true, toolName = "Bridge Trowel"}, {ra
 MakeWeapon("Glowblade", {toolName = "Bridge Trowel"}, {reloadModifier = 999, swingSpeed = 999, lungeTime = 999, specialAttack = "use another sword insead", brickCost = "x"}) --disabled to disencourage unnecessary lag
 MakeWeapon("Umbrellade", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.8, swingSpeed = 0.8})
 MakeWeapon("Petal Parasol", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.8, swingSpeed = 0.8}) --umbrellade skin
-MakeWeapon("Tennis Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40)}, {reloadModifier = 0.5, ragdollResist = true, brickCost = "&", projectileSpeed = 100})
-MakeWeapon("Golden Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40)}, {reloadModifier = 0.5, ragdollResist = true, brickCost = "&", projectileSpeed = 100}) --tenis racket skin
+MakeWeapon("Tennis Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40), reflectAccuracy = 999}, {reloadModifier = 0.5, ragdollResist = true, brickCost = "&", projectileSpeed = 100})
+MakeWeapon("Golden Racket", {ragdollResist = true, toolName = "Bridge Trowel", speed = 100, damage = 35, ragdoll = 1.4, knockback = Vector3.new(-40, 0, -40), reflectAccuracy = 999}, {reloadModifier = 0.5, ragdollResist = true, brickCost = "&", projectileSpeed = 100}) --tenis racket skin
 MakeWeapon("Ice Sword", {damage = 30, chill = 2.5, speed = 88, ragdollResist = true, toolName = "Bridge Trowel",}, {ragdollResist = true, brickCost = "&", projectileSpeed = 88, reloadModifier = 0.6})
 MakeWeapon("Bamboo Buster", {ragdollResist = true, toolName = "Bridge Trowel", speed = 75, minDamage = 25, damage = 35, detTime = 0.8, bombJumpMultiplier = 0.75, noDestroy = false}, {ragdollResist = true, brickCost = "&", projectileSpeed = 75, reloadModifier = 1, swingSpeed = 1.5, StrongSwing = false, noStrike = true})
 MakeWeapon("Brickbreaker", {ragdollResist = true, toolName = "Bridge Trowel"}, {ragdollResist = true, brickCost = "&", reloadModifier = 0.5, swingSpeed = 0.6})
