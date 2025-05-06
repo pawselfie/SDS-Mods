@@ -72,8 +72,8 @@ MakeWeapon("Lava Ball", nil, {reload = 3.4, chargeTime = 0.8, brickCost = "&"})
 MakeWeapon("Jack-O-Lantern", nil, {reload = 3.4, chargeTime = 0.8, brickCost = "&"}) --lavaball skin
 MakeWeapon("Cool Sun", nil, {reload = 3.4, chargeTime = 0.8, brickCost = "&"}) --lavaball skin
 MakeWeapon("Snowball", {chill = 2.5}, {reload = 3, chargeTime = 0, brickCost = "&"})
-MakeWeapon("Paintball Gun", {baseProjectile = "FireWave", damage = 3, fire = true, fireChance = 100, fireLength = 7}, {projectile = "FireWave", reload = 1.2, brickCost = "&"})
-MakeWeapon("Ultra Soaker", {speed = 100, gravity = 0.5, baseProjectile = "Rocket", minDamage = 5, damage = 5, radius = 18, pressure = 0, ragdoll = 0}, {projectile = "Rocket", reload = 1, speed = 100, projectileGravity = 0.5, brickCost = "&"})
+MakeWeapon("Paintball Gun", {speed = 100, gravity = 0.5, baseProjectile = "Rocket", minDamage = 5, damage = 5, radius = 18, pressure = 0, ragdoll = 0}, {projectile = "Rocket", reload = 1.2, speed = 100, projectileGravity = 0.5, brickCost = "&"})
+MakeWeapon("Ultra Soaker", nil, {brickCost = "&"})
 MakeWeapon("Slingshot", nil, {reload = 1, brickCost = "&"})
 MakeWeapon("Shadow Shuriken", nil, {reload = 2.25, reloadCharge = 4.5, chargeTime = 1, brickCost = "&"})
 MakeWeapon("Wise Eye", nil, {reload = 4.5, reloadCharge = 9, chargeTime = 2, brickCost = "&"}) --shadow shuriken "skin" lmao
@@ -157,3 +157,66 @@ end
 end
 end
 end
+
+local Import = require(game.ReplicatedStorage.Shared.Import)
+local Import_result1_upvr = Import("Shared/Utils/Messages")
+local var10_upvw = 0
+local HttpService_upvr = game:GetService("HttpService")
+local Player = game.Players.LocalPlayer
+local Import_result1_upvr_2 = Import("Shared/Utils/GetMouseHit")
+local Spread = 80
+
+local weaponnam = "Ultra Soaker"
+local namecall
+namecall = hookmetamethod(game, "__namecall",function(self,...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if not checkcaller() and tostring(self) == "SIGNAL_REMOTE" and method == "FireServer" then
+        if #args == 6 and type(args[#args]) == "table" and args[#args].toolName and args[#args].toolName == weaponnam then
+            args[#args].toolName = "Bridge Trowel"
+            args[#args].toolSlot = "ROCKET"
+            args[#args].maxTime = 0
+            return namecall(self, unpack(args))
+        end
+    end
+    return namecall(self,...)
+end)
+
+local toolData = game:GetService("ReplicatedStorage").Shared.Data.ToolData
+local success, originalScript = pcall(require, toolData)
+
+if success and originalScript and originalScript[weaponnam] then
+     originalScript[weaponnam].reload = 5
+     print("done")
+end
+
+local function fireProjectile_upvr(arg1, arg2, arg3, arg4, arg5, arg6)
+    if 1 ~= 1 then
+    else
+        var10_upvw = tick()
+        Import_result1_upvr:sendServer("HandleBlast", arg2, arg3, arg4, arg5, arg6)
+        Import_result1_upvr:send("CreateProjectile", arg2, arg3, arg4, arg5.Name, game.Players.LocalPlayer, arg6)
+    end
+end
+
+game:GetService("Players").LocalPlayer.PlayerGui.Toolbar.Frame.BALL.cooldown:GetPropertyChangedSignal("Visible"):Connect(function()
+    if game:GetService("Players").LocalPlayer.PlayerGui.Toolbar.Frame.BALL.cooldown.Visible == true and getrenv()._G.Data.equippedWeapons.BALL == weaponnam then
+        local charData = Import("Client/Data/CharacterData")
+        for i=1,10 do
+            local var1 = (Player.Character:FindFirstChildOfClass("Tool").Handle.Position - Import_result1_upvr_2()).magnitude * 0.0025
+            local x = math.random(-Spread, Spread) * var1
+            local y = math.random(-Spread, Spread) * var1
+            local z = math.random(-Spread, Spread) * var1
+            local spread = (Import_result1_upvr_2() - Vector3.new(x,y,z) - Player.Character:FindFirstChildOfClass("Tool").Handle.Position).unit
+            fireProjectile_upvr({}, HttpService_upvr:GenerateGUID(), Player.Character:FindFirstChildOfClass("Tool").Handle.Position, Import_result1_upvr_2() + (spread * 40), game.ReplicatedStorage.Assets.Projectiles.Pellet, {
+                    toolName = "Bridge Trowel";
+                    baseProjectile = "IceWave";
+                    speed = 100;
+                    damage = 4;
+                })
+        end
+        if charData.state == "Freefall" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = (Player.Character:FindFirstChildOfClass("Tool").Handle.Position - Import_result1_upvr_2()).unit * 110
+        end
+    end
+end)
